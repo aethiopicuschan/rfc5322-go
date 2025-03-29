@@ -1,4 +1,4 @@
-module rfc5322-go
+module github.com/aethiopicuschan/rfc5322-go
 
 go 1.24.0
 

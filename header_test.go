@@ -1,10 +1,10 @@
 package rfc5322_test
 
 import (
-	"rfc5322-go"
 	"testing"
 	"time"
 
+	"github.com/aethiopicuschan/rfc5322-go"
 	"github.com/moznion/go-optional"
 	"github.com/stretchr/testify/assert"
 )

@@ -1,9 +1,9 @@
 package rfc5322_test
 
 import (
-	"rfc5322-go"
 	"testing"
 
+	"github.com/aethiopicuschan/rfc5322-go"
 	"github.com/stretchr/testify/assert"
 )
 

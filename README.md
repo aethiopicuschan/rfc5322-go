@@ -20,8 +20,9 @@ package main
 
 import (
 	"fmt"
-	"rfc5322-go"
 	"time"
+
+	"github.com/aethiopicuschan/rfc5322-go"
 )
 
 func main() {
