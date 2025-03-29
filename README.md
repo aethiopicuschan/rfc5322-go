@@ -75,6 +75,10 @@ func main() {
 }
 ```
 
+## Features
+
+If you want to disable encoding, you can use `rfc5322.DisableEncode()`.
+
 ## Testing
 
 ```bash

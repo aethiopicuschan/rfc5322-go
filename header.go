@@ -294,18 +294,24 @@ func (h Header) String() (s string, err error) {
 	}
 	if h.subject.IsSome() {
 		subject := h.subject.Unwrap()
-		subject = mime.QEncoding.Encode("utf-8", subject)
+		if encode {
+			subject = mime.QEncoding.Encode("utf-8", subject)
+		}
 		sb.WriteString(fmt.Sprintf("Subject: %s\r\n", subject))
 	}
 	if h.comments.IsSome() {
 		comments := h.comments.Unwrap()
-		comments = mime.QEncoding.Encode("utf-8", comments)
+		if encode {
+			comments = mime.QEncoding.Encode("utf-8", comments)
+		}
 		sb.WriteString(fmt.Sprintf("Comments: %s\r\n", comments))
 	}
 	if h.keywords.IsSome() {
 		keywords := h.keywords.Unwrap()
-		for i, keyword := range keywords {
-			keywords[i] = mime.QEncoding.Encode("utf-8", keyword)
+		if encode {
+			for i, keyword := range keywords {
+				keywords[i] = mime.QEncoding.Encode("utf-8", keyword)
+			}
 		}
 		sb.WriteString(fmt.Sprintf("Keywords: %s\r\n", strings.Join(keywords, ", ")))
 	}
@@ -377,6 +383,9 @@ func (h Header) String() (s string, err error) {
 	if h.extra.IsSome() {
 		extra := h.extra.Unwrap()
 		for key, value := range extra {
+			if encode {
+				value = mime.QEncoding.Encode("utf-8", value)
+			}
 			sb.WriteString(fmt.Sprintf("%s: %s\r\n", key, value))
 		}
 	}

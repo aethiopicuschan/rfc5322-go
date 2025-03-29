@@ -60,15 +60,23 @@ func (a *Address) Value() string {
 // String returns the string representation of the Address.
 func (a *Address) String() (s string, err error) {
 	if a.name.IsSome() {
-		name := mime.QEncoding.Encode("utf-8", a.name.Unwrap())
-		s, err = idna.ToASCII(a.value)
-		if err != nil {
-			return
+		var name string
+		if encode {
+			name = mime.QEncoding.Encode("utf-8", a.name.Unwrap())
+			s, err = idna.ToASCII(a.value)
+			if err != nil {
+				return
+			}
+		} else {
+			s = a.value
+			name = a.name.Unwrap()
 		}
 		s = fmt.Sprintf("%s <%s>", name, s)
 		return
 	} else {
-		s, err = idna.ToASCII(a.value)
+		if encode {
+			s, err = idna.ToASCII(a.value)
+		}
 	}
 	return
 }
