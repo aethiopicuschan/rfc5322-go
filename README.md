@@ -5,7 +5,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/aethiopicuschan/rfc5322-go)](https://goreportcard.com/report/github.com/aethiopicuschan/rfc5322-go)
 [![CI](https://github.com/aethiopicuschan/rfc5322-go/actions/workflows/ci.yaml/badge.svg)](https://github.com/aethiopicuschan/rfc5322-go/actions/workflows/ci.yaml)
 
-Builder for [RFC 5322](https://tools.ietf.org/html/rfc5322) compliant email addresses in Go.
+Builder for [RFC 5322](https://tools.ietf.org/html/rfc5322) compliant email text in Go.
 
 ## Installation
 
